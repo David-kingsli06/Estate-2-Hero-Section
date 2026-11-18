@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --color-sand: #D8C3A5;
+  --color-ink: #2B2620;
+  --color-cedar: #8A5A3C;
+  --color-stone: #5C5043;
+  --background: var(--color-sand);
+  --foreground: var(--color-ink);
+}
+
+@theme inline {
+  --color-sand: var(--color-sand);
+  --color-ink: var(--color-ink);
+  --color-cedar: var(--color-cedar);
+  --color-stone: var(--color-stone);
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--color-sand);
+  color: var(--color-ink);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Subtle readable text shadow over brighter or textured areas */
+.text-shadow-calm {
+  text-shadow: 0 1px 16px rgba(243, 235, 222, 0.5);
+}
+
+/* Scroll cue pulsing animation */
+@keyframes cedarPulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-cedar-pulse {
+  animation: cedarPulse 2s ease-in-out infinite;
+}
